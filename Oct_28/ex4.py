@@ -60,3 +60,8 @@ print(type(person))
 
 #boolean type->bool(2/10)
 #none type->none(2/10)
+
+x=True
+y=None
+print(type(x))  #prints the type of the variable x, which is a boolean
+print(type(y))  #prints the type of the variable y, which is NoneType
