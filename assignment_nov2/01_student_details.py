@@ -1,0 +1,10 @@
+name = input("Enter student name: ")
+age = int(input("Enter age: "))
+branch = input("Enter branch: ")
+percentage = float(input("Enter percentage: "))
+
+print("\n--- Student Details ---")
+print("Name       :", name)
+print("Age        :", age)
+print("Branch     :", branch)
+print("Percentage :", percentage, "%")
