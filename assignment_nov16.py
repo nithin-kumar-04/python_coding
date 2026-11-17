@@ -1,11 +1,9 @@
 from fastapi import FastAPI
 
-app = FastAPI()  # create a FastAPI instance
-
-# GET PUT POST DELETE PATCH
+app = FastAPI()
 
 
-@app.get("/")  # decorator to define a GET endpoint
+@app.get("/")  
 def home():
     return {"message": "Welcome to Hotel Room Booking"}  # return a JSON response
 
