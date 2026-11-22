@@ -1,0 +1,205 @@
+/* ─── Reset & Base ─────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: #f1f5f9;
+  color: #1e293b;
+  min-height: 100vh;
+}
+
+/* ─── App Shell ─────────────────────────────────────────────────────── */
+.app { display: flex; flex-direction: column; min-height: 100vh; }
+
+/* ─── Header ────────────────────────────────────────────────────────── */
+.app-header {
+  background: linear-gradient(135deg, #f97316 0%, #ef4444 100%);
+  color: white;
+  padding: 20px 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.header-content { display: flex; align-items: center; gap: 16px; max-width: 860px; margin: 0 auto; }
+.logo { font-size: 48px; }
+.app-title { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; }
+.app-tagline { font-size: 14px; opacity: 0.85; margin-top: 2px; }
+
+/* ─── Tab Bar ───────────────────────────────────────────────────────── */
+.tab-bar {
+  display: flex;
+  background: white;
+  border-bottom: 2px solid #e2e8f0;
+  padding: 0 24px;
+  gap: 4px;
+}
+.tab-btn {
+  background: none; border: none; cursor: pointer;
+  padding: 14px 20px; font-size: 15px; font-weight: 500;
+  color: #64748b; border-bottom: 3px solid transparent;
+  transition: all 0.2s; display: flex; align-items: center; gap: 6px;
+  position: relative; bottom: -2px;
+}
+.tab-btn:hover { color: #f97316; }
+.tab-btn.active { color: #f97316; border-bottom-color: #f97316; font-weight: 600; }
+.badge {
+  background: #f97316; color: white; border-radius: 999px;
+  font-size: 11px; padding: 1px 7px; font-weight: 700;
+}
+
+/* ─── Main Content ──────────────────────────────────────────────────── */
+.main-content { flex: 1; max-width: 860px; margin: 0 auto; padding: 28px 20px; width: 100%; }
+
+/* ─── Cards ─────────────────────────────────────────────────────────── */
+.card {
+  background: white; border-radius: 16px;
+  padding: 28px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  border: 1px solid #e2e8f0;
+}
+.input-card { margin-bottom: 24px; }
+.section-title { font-size: 20px; font-weight: 700; color: #1e293b; margin-bottom: 6px; }
+.subtitle { color: #64748b; font-size: 14px; margin-bottom: 20px; }
+
+/* ─── Input Row ─────────────────────────────────────────────────────── */
+.input-row { display: flex; gap: 10px; margin-bottom: 14px; }
+.text-input {
+  flex: 1; padding: 10px 16px; border: 2px solid #e2e8f0;
+  border-radius: 10px; font-size: 15px; transition: border-color 0.2s;
+  outline: none;
+}
+.text-input:focus { border-color: #f97316; }
+
+/* ─── Tags ──────────────────────────────────────────────────────────── */
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.tag {
+  background: #fff7ed; border: 1.5px solid #fed7aa;
+  color: #c2410c; border-radius: 999px;
+  padding: 5px 12px; font-size: 13px; font-weight: 500;
+  display: flex; align-items: center; gap: 6px;
+}
+.tag-remove {
+  background: none; border: none; cursor: pointer;
+  color: #c2410c; font-size: 16px; padding: 0;
+  line-height: 1; font-weight: 700;
+}
+.tag-remove:hover { color: #ef4444; }
+
+/* ─── Options Row ───────────────────────────────────────────────────── */
+.options-row { display: flex; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+.option-group { display: flex; flex-direction: column; gap: 6px; min-width: 160px; }
+.option-label { font-size: 13px; font-weight: 600; color: #475569; }
+.select-input {
+  padding: 9px 12px; border: 2px solid #e2e8f0; border-radius: 10px;
+  font-size: 14px; background: white; cursor: pointer; outline: none;
+  transition: border-color 0.2s;
+}
+.select-input:focus { border-color: #f97316; }
+
+/* ─── Buttons ───────────────────────────────────────────────────────── */
+.btn {
+  padding: 10px 18px; border-radius: 10px; border: none;
+  cursor: pointer; font-size: 14px; font-weight: 600;
+  transition: all 0.2s; white-space: nowrap;
+}
+.btn:disabled { opacity: 0.55; cursor: not-allowed; }
+.btn-primary {
+  background: linear-gradient(135deg, #f97316, #ef4444);
+  color: white; font-size: 16px; padding: 13px 24px;
+}
+.btn-primary:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(249,115,22,0.4); }
+.btn-secondary { background: #f1f5f9; color: #374151; border: 2px solid #e2e8f0; }
+.btn-secondary:hover { background: #e2e8f0; }
+.btn-save {
+  background: #fff7ed; color: #c2410c; border: 2px solid #fed7aa;
+  font-size: 13px; padding: 7px 14px; border-radius: 8px;
+}
+.btn-save:hover:not(:disabled) { background: #ffedd5; }
+.btn-delete {
+  background: #fef2f2; color: #dc2626; border: 2px solid #fecaca;
+  font-size: 13px; padding: 7px 14px; border-radius: 8px;
+}
+.btn-delete:hover:not(:disabled) { background: #fee2e2; }
+.full-width { width: 100%; }
+
+/* ─── Loading & Error ───────────────────────────────────────────────── */
+.loading-box {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 14px; padding: 40px; color: #64748b;
+}
+.spinner {
+  width: 40px; height: 40px; border: 4px solid #e2e8f0;
+  border-top-color: #f97316; border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.error-box {
+  background: #fef2f2; border: 1.5px solid #fecaca; color: #dc2626;
+  padding: 14px 18px; border-radius: 12px; margin-bottom: 16px; font-size: 14px;
+}
+
+/* ─── Results ───────────────────────────────────────────────────────── */
+.results-section { margin-top: 8px; }
+.results-title { font-size: 17px; font-weight: 600; margin-bottom: 16px; color: #374151; }
+.results-title em { color: #f97316; font-style: normal; }
+
+/* ─── Recipe Card ───────────────────────────────────────────────────── */
+.recipe-card {
+  background: white; border-radius: 14px; border: 1.5px solid #e2e8f0;
+  padding: 20px 22px; margin-bottom: 16px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s;
+}
+.recipe-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+.recipe-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+.recipe-title { font-size: 17px; font-weight: 700; color: #1e293b; margin-bottom: 6px; }
+.recipe-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+.meta-badge {
+  background: #f8fafc; border: 1px solid #e2e8f0;
+  color: #475569; font-size: 12px; padding: 3px 10px; border-radius: 999px;
+}
+.difficulty-badge { font-weight: 600; }
+.date-badge { color: #94a3b8; }
+
+/* ─── Recipe Details ────────────────────────────────────────────────── */
+.toggle-btn {
+  background: none; border: none; cursor: pointer;
+  color: #f97316; font-size: 13px; font-weight: 600;
+  padding: 4px 0; transition: color 0.2s;
+}
+.toggle-btn:hover { color: #c2410c; }
+.recipe-details { margin-top: 16px; border-top: 1px solid #f1f5f9; padding-top: 16px; display: flex; flex-direction: column; gap: 16px; }
+.detail-section {}
+.detail-heading { font-size: 14px; font-weight: 700; color: #374151; margin-bottom: 8px; }
+.detail-text {
+  font-family: inherit; font-size: 14px; color: #475569;
+  white-space: pre-wrap; line-height: 1.7; background: #f8fafc;
+  padding: 12px 16px; border-radius: 10px; border: 1px solid #e2e8f0;
+}
+
+/* ─── Saved Tab ─────────────────────────────────────────────────────── */
+.saved-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+.saved-count { background: #fff7ed; color: #c2410c; border: 1.5px solid #fed7aa; padding: 4px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; }
+.saved-list {}
+.saved-card {}
+
+/* ─── Empty State ───────────────────────────────────────────────────── */
+.empty-state { text-align: center; padding: 56px 24px; }
+.empty-icon { font-size: 56px; margin-bottom: 16px; }
+.empty-text { font-size: 18px; font-weight: 600; color: #374151; margin-bottom: 8px; }
+.empty-sub { color: #94a3b8; font-size: 14px; }
+
+/* ─── Footer ────────────────────────────────────────────────────────── */
+.app-footer {
+  text-align: center; padding: 20px;
+  color: #94a3b8; font-size: 13px;
+  border-top: 1px solid #e2e8f0; background: white;
+}
+
+/* ─── Responsive ────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .header-content { gap: 10px; }
+  .logo { font-size: 36px; }
+  .app-title { font-size: 22px; }
+  .input-row { flex-direction: column; }
+  .options-row { flex-direction: column; }
+  .recipe-header { flex-direction: column; }
+  .tab-btn { padding: 12px 14px; font-size: 13px; }
+}
